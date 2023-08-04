@@ -20,7 +20,8 @@ const styles = StyleSheet.create({
         textShadowOffset: { width: 0, height: 5 },
         elevation: 0.5,
         overflow: 'hidden',
-        justifyContent: 'space-evenly'
+        justifyContent: 'space-evenly',
+        // flex:4/4
     },
    
 })

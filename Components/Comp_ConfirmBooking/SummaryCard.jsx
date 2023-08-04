@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image , Dimensions } from 'react-native'
 import React from 'react'
 
 import Colors from '../../Constant/Colors'
@@ -7,11 +7,13 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 import img from '../../assets/TripPhoto.png'
 
+
+
 export default function SummaryCard() {
     return (
         <View style={styles.card}>
 
-            <Image source={img} style={{ width: 90, height: 80, borderRadius: 15 }} />
+            <Image source={img} style={{ width: 100, height: 100, borderRadius: 15 }} />
 
             <View style={{ margin: 10 }}>
                 <Text style={styles.title}>Hornborga</Text>
@@ -45,7 +47,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         elevation: 12,
         borderRadius: 25,
-        padding: 10,
+        padding: 8,
         alignItems: 'center',
         backgroundColor: 'white'
     },

@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View , Dimensions } from 'react-native'
+import { StyleSheet, Text, View, Dimensions } from 'react-native'
 import React from 'react'
 
 import SemiCard from '../Components/SemiCard'
 import Header from '../Components/Comp_BookingTour/Header'
 import SummaryCard from '../Components/Comp_ConfirmBooking/SummaryCard'
 import PriceSummary from '../Components/Comp_ConfirmBooking/PriceSummary'
+import PaymentMethod from '../Components/Comp_ConfirmBooking/PaymentMethod'
 import MainBtn from '../Components/Buttons/MainBtn'
 
 import Colors from '../Constant/Colors'
@@ -16,12 +17,16 @@ const width = Dimensions.get('window').width
 export default function ConfirmBookingScreen({ navigation }) {
   return (
     <View style={styles.Screen}>
+
       <SemiCard>
-      <Header navigation={navigation} title={'Confirm Booking'}/>
-      <View style={{margin:25.5}}>
-      <SummaryCard/>
-      <PriceSummary/>
-      </View>
+        <View style={{justifyContent:'space-evenly'}}>
+          <Header navigation={navigation} title={'Confirm Booking'} />
+          <View style={{ margin: 25.5 }}>
+            <SummaryCard />
+            <PriceSummary />
+            <PaymentMethod />
+          </View>
+        </View>
 
       </SemiCard>
 
@@ -36,7 +41,7 @@ export default function ConfirmBookingScreen({ navigation }) {
           <MainBtn onClick={() => {
             navigation.navigate('ConfirmBookingScreen')
           }}
-            navigation={navigation} title={'Confirmation'} width={width/2.5} height={height / 13.2} />
+            navigation={navigation} title={'Confirmation'} width={width / 2.5} height={height / 13.2} />
         </View>
       </View>
 
@@ -47,7 +52,7 @@ export default function ConfirmBookingScreen({ navigation }) {
 const styles = StyleSheet.create({
   Screen: {
     flex: 1,
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-around',
   },
   Title: {
     fontFamily: 'poppinsSemiBold',
