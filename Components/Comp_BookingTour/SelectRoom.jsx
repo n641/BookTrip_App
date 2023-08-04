@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View, FlatList, Animated, Dimensions } from 'react-native'
 import React, { useState, useRef } from 'react'
 
-import Colors from '../Constant/Colors'
-import imgBed from '../assets/bed.png'
+import Colors from '../../Constant/Colors'
+import imgBed from '../../assets/bed.png'
 
 import RoomCard from './RoomCard'
 
-export default function SelectRoom() {
+export default function SelectRoom({HandleModel}) {
     const ref = useRef(null)
     const [Rooms, setRooms] = useState([
         {
@@ -39,7 +39,7 @@ export default function SelectRoom() {
                 horizontal
                 data={Rooms}
                 renderItem={({ item, index }) =>
-                    <RoomCard item={item} index={index} />
+                    <RoomCard item={item} index={index} HandleModel={HandleModel} />
                 }
                 keyExtractor={item => item.id}
                 showsHorizontalScrollIndicator={false}

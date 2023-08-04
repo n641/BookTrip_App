@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image, Dimensions } from 'react-native'
 import React from 'react'
-import img from '../assets/TripPhoto.png'
+import img from '../../assets/TripPhoto.png'
 
 import { Entypo } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
@@ -9,7 +9,7 @@ const width = Dimensions.get('window').width
 const height = Dimensions.get('window').height
 
 export default function CardOfTrip() {
-    const image = { uri: 'https://legacy.reactjs.org/logo-og.png' };
+
     return (
         <View style={{ borderRadius: 15, marginVertical: 5 }}>
             <Image source={img} style={styles.Container} />

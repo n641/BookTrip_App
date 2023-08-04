@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native'
 import React, { useState } from 'react'
 
-import Colors from '../Constant/Colors'
+import Colors from '../../Constant/Colors'
 import { AntDesign } from '@expo/vector-icons';
 
 const width = Dimensions.get('window').width

@@ -3,36 +3,56 @@ import React from 'react'
 
 import Colors from '../Constant/Colors'
 
-import Header from '../Components/Header'
-import CardOfTrip from '../Components/CardOfTrip'
-import AddPeopleTabs from '../Components/AddPeopleTabs'
-import SelectRoom from '../Components/SelectRoom'
-import Transportation from '../Components/Transportation'
+import Header from '../Components/Comp_BookingTour/Header'
+import CardOfTrip from '../Components/Comp_BookingTour/CardOfTrip'
+import AddPeopleTabs from '../Components/Comp_BookingTour/AddPeopleTabs'
+import SelectRoom from '../Components/Comp_BookingTour/SelectRoom'
+import Transportation from '../Components/Comp_BookingTour/Transportation'
 import MainBtn from '../Components/Buttons/MainBtn'
 
-const height = Dimensions.get('window').height
+import SemiCard from '../Components/SemiCard'
 
-export default function BookingTour({ navgation }) {
+import PopViewRoom from './PopViewRoom'
+
+const height = Dimensions.get('window').height
+const width = Dimensions.get('window').width
+
+
+export default function BookingTour({ navigation }) {
+    const [isModelOpen, setisModelOpen] = React.useState(false)
+
+    const HandleModel = (val) => {
+        setisModelOpen(val)
+    }
     return (
         <View style={styles.Screen}>
-            <View style={styles.containerAbove}>
+
+            <PopViewRoom HandleModel={HandleModel} isModelOpen={isModelOpen} navigation={navigation} />
+
+            <SemiCard style={styles.containerAbove}>
                 <StatusBar hidden={true} />
-                <Header navgation={navgation} title={'Booking Trip'} />
+                <Header navigation={navigation} title={'Booking Trip'} />
                 <CardOfTrip />
                 <AddPeopleTabs />
-                <SelectRoom />
+                <SelectRoom HandleModel={HandleModel} />
                 <Transportation />
-            </View>
+            </SemiCard>
 
-            <View style={ styles.footer}>
+            <View style={styles.footer}>
+
                 <View style={{ alignItems: 'center', marginHorizontal: 21 }}>
                     <Text style={styles.Title}>Total</Text>
                     <Text style={styles.subtitle}>$1250</Text>
                 </View>
+
                 <View>
-                    <MainBtn navgation={navgation} title={'Confirm'} width={160} height={height/13.2}/>
+                    <MainBtn onClick={() => {
+                        navigation.navigate('ConfirmBookingScreen')
+                    }}
+                        navigation={navigation} title={'Confirm'} width={width/2.5} height={height / 13.2} />
                 </View>
             </View>
+
         </View>
     )
 }
@@ -40,15 +60,7 @@ export default function BookingTour({ navgation }) {
 const styles = StyleSheet.create({
     Screen: {
         flex: 1,
-    },
-    containerAbove: {
-        paddingVertical: 10,
-        backgroundColor: 'white',
-        borderRadius: 35,
-        textShadowColor: Colors.shadowOfHeader,
-        textShadowOffset: { width: 0, height: 5 },
-        elevation: 0.5,
-        overflow: 'hidden'
+        justifyContent: 'space-evenly',
     },
     Title: {
         fontFamily: 'poppinsSemiBold',
@@ -65,6 +77,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         flex: 5 / 4,
-        padding:10
+        padding: 10
     }
 })

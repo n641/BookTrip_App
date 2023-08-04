@@ -1,12 +1,14 @@
-import { StyleSheet, Text, View, Image, Dimensions } from 'react-native'
+import { StyleSheet, Text, View, Image, Dimensions , TouchableOpacity } from 'react-native'
 import React from 'react'
-import Colors from '../Constant/Colors'
+import Colors from '../../Constant/Colors'
 
 const width = Dimensions.get('window').width
 
-export default function RoomCard({ item, index }) {
+export default function RoomCard({ item, HandleModel }) {
     return (
-        <View style={[styles.Card, { backgroundColor: item.bgColor }]}>
+        <TouchableOpacity style={[styles.Card, { backgroundColor: item.bgColor }]}
+        onPress={()=>{HandleModel(true)}}
+        >
             
             <View style={[styles.Container, { backgroundColor: item.bgImg }]}>
                 <Image source={item.img} resizeMode='contain' />
@@ -21,7 +23,7 @@ export default function RoomCard({ item, index }) {
                 </View>
 
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 

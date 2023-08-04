@@ -1,12 +1,22 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View , TouchableOpacity } from 'react-native'
 import React from 'react'
 
-export default function OutlineBtn() {
+import Colors from '../../Constant/Colors'
+
+export default function OutlineBtn({navigation, title, width, height, onClick}) {
   return (
-    <View>
-      <Text>OutlineBtn</Text>
-    </View>
+    <TouchableOpacity onPress={onClick} style={[styles.card , {width:width, height:height}]}>
+      <Text>{title}</Text>
+    </TouchableOpacity>
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  card:{
+    borderWidth:1,
+    borderColor:Colors.gray,
+    borderRadius:15,
+    alignItems:'center',
+    justifyContent:'center'
+  }
+})

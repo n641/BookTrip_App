@@ -1,20 +1,20 @@
 import { StyleSheet, Text, View, Dimensions } from 'react-native'
 import React from 'react'
 
-import Colors from '../Constant/Colors'
+import Colors from '../../Constant/Colors'
 import { Ionicons } from '@expo/vector-icons';
 
 const width = Dimensions.get('window').width
 const height = Dimensions.get('window').height
 
 
-export default function Header({ navgation, title }) {
+export default function Header({ navigation, title }) {
     return (
 
         <View style={styles.container}>
 
             <View style={{ flex: 1 / 2 }} >
-                <Ionicons name="chevron-back" size={30} color="black" onPress={() => { navgation.goBack() }} />
+                <Ionicons name="chevron-back" size={30} color="black" onPress={() => { navigation.goBack() }} />
             </View>
 
             <View >

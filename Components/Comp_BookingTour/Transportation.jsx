@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-nati
 import React, { useState } from 'react'
 
 import { LinearGradient } from 'expo-linear-gradient';
-import Colors from '../Constant/Colors'
+import Colors from '../../Constant/Colors'
 import { Ionicons } from '@expo/vector-icons';
 
 
@@ -41,11 +41,12 @@ export default function Transportation() {
                         <TouchableOpacity key={e.Key}
                             style={[styles.btn]}
                             onPress={() => { setActive(e.Key) }} >
-                            {Active === e.Key ? <LinearGradient
-                            start={{x: 0.0, y: 0.2}} end={{x: 0.5, y: 1.5}}
-                            colors={['#EBC2FC', '#E0A5F9', '#D587F5']} style={styles.btn}>
-                                <Ionicons name={e.status} size={30} color="gray" />
-                            </LinearGradient>
+                            {Active === e.Key ?
+                                <LinearGradient
+                                    start={{ x: 0.0, y: 0.2 }} end={{ x: 0.5, y: 1.5 }}
+                                    colors={['#EBC2FC', '#E0A5F9', '#D587F5']} style={styles.btn}>
+                                    <Ionicons name={e.status} size={30} color="gray" />
+                                </LinearGradient>
                                 :
                                 <Ionicons name={e.status} size={30} color="gray" />
 
@@ -92,5 +93,5 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontFamily: 'poppinsRegular',
     },
-    
+
 })
