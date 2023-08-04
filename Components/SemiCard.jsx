@@ -3,9 +3,9 @@ import React from 'react'
 
 import Colors from '../Constant/Colors'
 
-export default function SemiCard({ children }) {
+export default function SemiCard({ children , style }) {
     return (
-        <View style={styles.containerAbove}>
+        <View style={[styles.containerAbove , style]}>
             {children}
         </View>
     )
@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
         textShadowOffset: { width: 0, height: 5 },
         elevation: 0.5,
         overflow: 'hidden',
-        justifyContent: 'space-evenly',
-        // flex:4/4
+        // justifyContent: 'space-evenly',
+        // flex:1
     },
    
 })

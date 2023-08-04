@@ -25,7 +25,7 @@ export default function BookingTour({ navigation }) {
         setisModelOpen(val)
     }
     return (
-        <View style={styles.Screen}>
+        <ScrollView contentContainerStyle={styles.Screen}>
 
             <PopViewRoom HandleModel={HandleModel} isModelOpen={isModelOpen} navigation={navigation} />
 
@@ -53,13 +53,13 @@ export default function BookingTour({ navigation }) {
                 </View>
             </View>
 
-        </View>
+        </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
     Screen: {
-        flex: 1,
+        flexGrow: 1,
         justifyContent: 'space-evenly',
     },
     Title: {

@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         marginHorizontal: 15,
-        marginTop: 20
+        marginTop: 15
     },
     ContainerPeopleSummary: {
         justifyContent: 'center'

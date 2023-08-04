@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import BookingTour from '../Screens/BookingTour';
 import ConfirmBookingScreen from '../Screens/ConfirmBookingScreen';
+import ComplateBooking from '../Screens/ComplateBooking';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +15,7 @@ function MainNavigation() {
       <Stack.Navigator  screenOptions={{headerShown:false }} >
         <Stack.Screen name="BookingTour" component={BookingTour} />
         <Stack.Screen name="ConfirmBookingScreen" component={ConfirmBookingScreen} />
+        <Stack.Screen name="ComplateBooking" component={ComplateBooking} />
 
       </Stack.Navigator>
     </NavigationContainer>

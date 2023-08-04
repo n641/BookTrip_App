@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Dimensions } from 'react-native'
+import { StyleSheet, Text, View, Dimensions , ScrollView } from 'react-native'
 import React from 'react'
 
 import SemiCard from '../Components/SemiCard'
@@ -16,12 +16,12 @@ const width = Dimensions.get('window').width
 
 export default function ConfirmBookingScreen({ navigation }) {
   return (
-    <View style={styles.Screen}>
+    <ScrollView contentContainerStyle={styles.Screen}>
 
       <SemiCard>
-        <View style={{justifyContent:'space-evenly'}}>
+        <View style={{ justifyContent: 'space-evenly' }}>
           <Header navigation={navigation} title={'Confirm Booking'} />
-          <View style={{ margin: 25.5 }}>
+          <View style={{ margin: 20.5 }}>
             <SummaryCard />
             <PriceSummary />
             <PaymentMethod />
@@ -39,19 +39,19 @@ export default function ConfirmBookingScreen({ navigation }) {
 
         <View>
           <MainBtn onClick={() => {
-            navigation.navigate('ConfirmBookingScreen')
+            navigation.navigate('ComplateBooking')
           }}
             navigation={navigation} title={'Confirmation'} width={width / 2.5} height={height / 13.2} />
         </View>
       </View>
 
-    </View>
+    </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
   Screen: {
-    flex: 1,
+    flexGrow: 1,
     justifyContent: 'space-around',
   },
   Title: {
