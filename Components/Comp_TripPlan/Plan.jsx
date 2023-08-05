@@ -13,7 +13,6 @@ import Img2 from '../../assets/beach.png'
 import Img3 from '../../assets/orangejuice.png'
 
 import Dash from 'react-native-dash';
-import OutlineBtn from '../Buttons/OutlineBtn';
 
 const width = Dimensions.get('window').width
 const height = Dimensions.get('window').height

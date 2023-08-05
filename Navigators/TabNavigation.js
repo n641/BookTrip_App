@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import TripPlanScreen from '../Screens/TripPlanScreen';
-import BookingTour from '../Screens/BookingTour';
+import Memmories from '../Screens/Memmories';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Ionicons } from '@expo/vector-icons';
@@ -96,7 +96,7 @@ export default function MyTabs({ navigation }) {
 
             <Tab.Screen
                 name="history"
-                component={TripPlanScreen}
+                component={Memmories}
                 options={{
                     tabBarLabel: 'history',
                     tabBarShowLabel: false,
@@ -108,7 +108,7 @@ export default function MyTabs({ navigation }) {
                 listeners={{
                     tabPress: e => {
                         e.preventDefault();
-                        navigation.navigate('BookingTour')  // memmories
+                        navigation.navigate('Memmories')  // memmories
                     },
                 }}
             />
