@@ -7,12 +7,15 @@ import BookingTour from '../Screens/BookingTour';
 import ConfirmBookingScreen from '../Screens/ConfirmBookingScreen';
 import ComplateBooking from '../Screens/ComplateBooking';
 
+import MyTabs from './TabNavigation';
+
 const Stack = createNativeStackNavigator();
 
 function MainNavigation() {
   return (
     <NavigationContainer >
-      <Stack.Navigator  screenOptions={{headerShown:false }} >
+      <Stack.Navigator screenOptions={{ headerShown: false }} >
+        <Stack.Screen name="MyTabs" component={MyTabs} />
         <Stack.Screen name="BookingTour" component={BookingTour} />
         <Stack.Screen name="ConfirmBookingScreen" component={ConfirmBookingScreen} />
         <Stack.Screen name="ComplateBooking" component={ComplateBooking} />

@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
 
 import MainNavigation from './Navigators/MainNavigation'
+import TripPlanScreen from './Screens/TripPlanScreen';
 
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
 
   return (
     <MainNavigation />
+    // <TripPlanScreen/>
   );
 }
 

@@ -3,9 +3,9 @@ import React from 'react'
 
 import Colors from '../../Constant/Colors'
 
-export default function OutlineBtn({navigation, title, width, height, onClick}) {
+export default function OutlineBtn({navigation, title, width, height, onClick , style}) {
   return (
-    <TouchableOpacity onPress={onClick} style={[styles.card , {width:width, height:height}]}>
+    <TouchableOpacity onPress={onClick} style={[styles.card , {width:width, height:height} , style]}>
       <Text>{title}</Text>
     </TouchableOpacity>
   )
