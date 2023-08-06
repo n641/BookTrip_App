@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, Dimensions } from 'react-native'
+import { StyleSheet, Text, View, Image, Dimensions, TouchableOpacity } from 'react-native'
 import React from 'react'
 import img from '../../assets/TripPhoto.png'
 
@@ -8,10 +8,10 @@ import { AntDesign } from '@expo/vector-icons';
 const width = Dimensions.get('window').width
 const height = Dimensions.get('window').height
 
-export default function CardOfTrip() {
+export default function CardOfTrip({ navigation }) {
 
     return (
-        <View style={{ borderRadius: 15, marginVertical: 5 }}>
+        <TouchableOpacity style={{ borderRadius: 15, marginVertical: 5 }} onPress={() => { navigation.navigate('TripDetails') }}>
             <Image source={img} style={styles.Container} />
             <View style={styles.containerTexts}>
                 <Text style={styles.title}>Hornborga</Text>
@@ -26,21 +26,21 @@ export default function CardOfTrip() {
                     </View>
                 </View>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 
 const styles = StyleSheet.create({
     Container: {
         width: width - 50,
-        height: height/4.9,
+        height: height / 4.9,
         alignSelf: 'center',
         borderRadius: 15
     },
     containerTexts: {
         position: 'absolute',
         left: width / 8,
-        top: height/8.5
+        top: height / 8.5
     },
     title: {
         fontFamily: 'poppinsSemiBold',

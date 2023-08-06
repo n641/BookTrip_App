@@ -14,7 +14,11 @@ export default function Header({ navigation, title }) {
         <View style={styles.container}>
 
             <View style={{ flex: 1 / 2 }} >
-                <Ionicons name="chevron-back" size={30} color="black" onPress={() => { navigation.goBack() }} />
+                <Ionicons name="chevron-back" size={30} color="black" onPress={() => {
+                    if (navigation.canGoBack()) {
+                        navigation.goBack()
+                    }
+                }} />
             </View>
 
             <View >
@@ -32,7 +36,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-start',
         margin: 15,
-        marginTop:20
+        marginTop: 20
     },
     title: {
         fontFamily: 'poppinsBold',

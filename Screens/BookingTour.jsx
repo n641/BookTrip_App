@@ -32,7 +32,7 @@ export default function BookingTour({ navigation }) {
             <SemiCard style={styles.containerAbove}>
                 <StatusBar hidden={true} />
                 <Header navigation={navigation} title={'Booking Trip'} />
-                <CardOfTrip />
+                <CardOfTrip navigation={navigation} />
                 <AddPeopleTabs />
                 <SelectRoom HandleModel={HandleModel} />
                 <Transportation />
@@ -49,7 +49,7 @@ export default function BookingTour({ navigation }) {
                     <MainBtn onClick={() => {
                         navigation.navigate('ConfirmBookingScreen')
                     }}
-                        navigation={navigation} title={'Confirm'} width={width/2.5} height={height / 13.2} />
+                        navigation={navigation} title={'Confirm'} width={width / 2.5} height={height / 13.2} />
                 </View>
             </View>
 

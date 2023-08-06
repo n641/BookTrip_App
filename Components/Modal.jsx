@@ -4,13 +4,13 @@ import { Button } from 'react-native'
 
 const height = Dimensions.get('window').height
 
-export default function Modall({ isModelOpen, HandleModel, children, height, width, justifyContent }) {
+export default function Modall({ isModelOpen, HandleModel, children, height, width, justifyContent , style }) {
     return (
         <>
             <Modal visible={isModelOpen} transparent={true} animationType='slide'  >
                 <View style={[styles.modelContainer, { justifyContent: justifyContent }]}>
-                    <View style={[styles.model, { height: height, width: width }]}>
-                        {children} 
+                    <View style={[styles.model, { height: height, width: width } , style]}>
+                        {children}
                     </View>
                 </View>
             </Modal>
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     modelContainer: {
         flex: 1,
         justifyContent: 'space-evenly',
-         alignItems: 'center'
+        alignItems: 'center'
     },
     model: {
         backgroundColor: 'white',
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 5,
         padding: 10,
-        marginTop:height/22,
-        borderRadius:25
+        marginTop: height / 22,
+        borderRadius: 25
     }
 })
