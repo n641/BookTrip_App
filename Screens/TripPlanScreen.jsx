@@ -9,6 +9,7 @@ import Header from '../Components/Comp_BookingTour/Header'
 import DateTabs from '../Components/Comp_TripPlan/DateTabs';
 import Plan from '../Components/Comp_TripPlan/Plan';
 import OutlineBtn from '../Components/Buttons/OutlineBtn';
+import MapPopUp from './MapPopUp';
 
 const height = Dimensions.get('window').height
 const width = Dimensions.get('window').width
@@ -96,8 +97,11 @@ export default function TripPlanScreen({ navigation }) {
       <Plan ActiveData={ActiveData} />
 
       <View style={styles.containerBtn}>
-        <OutlineBtn navigation={navigator} title={'View map'} width={width / 1.9} height={height / 15} onClick={() => { }} style={{ borderRadius: 18 }} />
+        <OutlineBtn navigation={navigator} title={'View map'} width={width / 1.9} height={height / 15} onClick={() => {
+          navigation.navigate('MapPopUp')
+        }} style={{ borderRadius: 18 }} />
       </View>
+
 
     </ScrollView>
   )

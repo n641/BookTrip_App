@@ -3,12 +3,12 @@ import React from 'react'
 
 import Colors from '../../Constant/Colors'
 
-export default function MainBtn({ navigation, title, width, height, onClick }) {
+export default function MainBtn({ navigation, title, width, height, onClick , style }) {
     return (
-        <TouchableOpacity style={[styles.containerBtn, { width: width, height: height }]}
+        <TouchableOpacity style={[styles.containerBtn, { width: width, height: height }, style]}
             onPress={onClick}
         >
-            <Text style={styles.title}>{title}</Text>
+            <Text style={[styles.title , style]}>{title}</Text>
         </TouchableOpacity>
     )
 }

@@ -8,6 +8,7 @@ import ConfirmBookingScreen from '../Screens/ConfirmBookingScreen';
 import ComplateBooking from '../Screens/ComplateBooking';
 import Memmories from '../Screens/Memmories';
 import TripDetails from '../Screens/TripDetails';
+import MapPopUp from '../Screens/MapPopUp';
 
 import MyTabs from './TabNavigation';
 
@@ -25,7 +26,7 @@ function MainNavigation() {
         <Stack.Screen name="ComplateBooking" component={ComplateBooking} />
         <Stack.Screen name="Memmories" component={Memmories} />
         <Stack.Screen name="TripDetails" component={TripDetails} />
-
+        <Stack.Screen name="MapPopUp" component={MapPopUp} />
       </Stack.Navigator>
     </NavigationContainer>
   );

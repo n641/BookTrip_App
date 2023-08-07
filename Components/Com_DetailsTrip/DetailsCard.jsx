@@ -141,7 +141,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         borderRadius: 25,
         justifyContent: 'space-evenly',
-        // alignItems: 'center',
         top: height / 2.4
     },
     Title: {
