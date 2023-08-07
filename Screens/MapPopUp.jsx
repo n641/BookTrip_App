@@ -69,19 +69,7 @@ export default function MapPopUp({ navigation }) {
 
     ])
 
-    const showLocationsOfInterest = () => {
-        return locations.map((item, index) => (
-            <Marker
-                key={index}
-                coordinate={item}
-                title={"item.hotelName"}
-                description={"item.description"}
-            >
 
-            </Marker>
-        )
-        )
-    };
 
 
 
@@ -122,7 +110,7 @@ export default function MapPopUp({ navigation }) {
                                     <Image source={img} style={{ width: 70, height: 70, borderRadius: 25 }} />
                                     <View style={{ justifyContent: 'space-evenly' }}>
                                         <Text style={[styles.Title, { color: 'black', fontSize: 13 }]}>{item.title}</Text>
-                                        <View style={{alignItems:'center'}}>
+                                        <View style={{ alignItems: 'center' }}>
                                             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                                 <Text style={[styles.Title, { fontSize: 13 }]}>from </Text>
                                                 <Text style={[styles.Title, , { fontSize: 13 }]}>{item.datefrom} </Text>
@@ -142,9 +130,19 @@ export default function MapPopUp({ navigation }) {
                 }
 
                 {/* <MapViewDirections
-                    origin={origin}
-                    destination={end}
-                    apikey={GOOGLE_MAPS_APIKEY}
+                    origin={{
+                        latitude: 37.82335,
+                        longitude: -122.4624,
+                        latitudeDelta: 0.0922,
+                        longitudeDelta: 0.0421,
+                    }}
+                    destination={{
+                        latitude: 37.81445,
+                        longitude: -122.4554,
+                        latitudeDelta: 0.0922,
+                        longitudeDelta: 0.0421,
+                    }}
+                // apikey={GOOGLE_MAPS_APIKEY}
                 /> */}
 
             </MapView>

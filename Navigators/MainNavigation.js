@@ -9,6 +9,7 @@ import ComplateBooking from '../Screens/ComplateBooking';
 import Memmories from '../Screens/Memmories';
 import TripDetails from '../Screens/TripDetails';
 import MapPopUp from '../Screens/MapPopUp';
+import GuidScreen from '../Screens/GuidScreen';
 
 import MyTabs from './TabNavigation';
 
@@ -27,6 +28,7 @@ function MainNavigation() {
         <Stack.Screen name="Memmories" component={Memmories} />
         <Stack.Screen name="TripDetails" component={TripDetails} />
         <Stack.Screen name="MapPopUp" component={MapPopUp} />
+        <Stack.Screen name="GuidScreen" component={GuidScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
